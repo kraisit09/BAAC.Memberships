@@ -19,5 +19,7 @@ namespace BAAC.Memberships.Models {
     public decimal Price { get; set; }
 
     public string Note { get; set; }
+
+    public MemberLevel Level { get; set; }
   }
 }

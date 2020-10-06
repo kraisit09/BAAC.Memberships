@@ -50,6 +50,11 @@ namespace BAAC.Memberships.Services.Data.Migrations
                     b.Property<int>("Days")
                         .HasColumnType("int");
 
+                    b.Property<string>("Level")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(10)")
+                        .HasMaxLength(10);
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(100)")
@@ -81,6 +86,9 @@ namespace BAAC.Memberships.Services.Data.Migrations
                     b.Property<string>("PackageCode")
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<decimal>("PaidAmount")
+                        .HasColumnType("decimal(18, 2)");
 
                     b.HasKey("Id");
 

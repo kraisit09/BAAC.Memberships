@@ -19,5 +19,8 @@ namespace BAAC.Memberships.Models {
 
     [ForeignKey(nameof(Package))]
     public string PackageCode { get; set; }
+
+    [Column(TypeName = "decimal(18, 2)")]
+    public decimal PaidAmount { get; set; }
   }
 }

@@ -14,6 +14,14 @@ namespace BAAC.Memberships.Services.Data {
 
     public DbSet<Subscription> Subscriptions { get; set; }
 
+    protected override void OnModelCreating(ModelBuilder modelBuilder) {
+      base.OnModelCreating(modelBuilder);
+
+      modelBuilder.Entity<Package>()
+        .Property(x => x.Level)
+        .HasConversion<string>()
+        .HasMaxLength(10);
+    }
 
   }
 }
